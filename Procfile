@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/milti.war
+web: java -Dserver.port=$PORT -jar target/dependency/webapp-runner.jar  target/*.war
