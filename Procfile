@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -war target/milti.war
+web: java -Dserver.port=$PORT -jar target/milti.jar
