@@ -6,31 +6,22 @@
     <title>Meals</title>
 </head>
 <body>
+
+
 <section>
     <h3><a href="index.html">Home</a></h3>
     <hr/>
     <h2>Meals</h2>
-    <%--<form method="get" action="meals">
-        <input type="hidden" name="action" value="filter">
-        <dl>
-            <dt>From Date (inclusive):</dt>
-            <dd><input type="date" name="startDate" value="${param.startDate}"></dd>
-        </dl>
-        <dl>
-            <dt>To Date (inclusive):</dt>
-            <dd><input type="date" name="endDate" value="${param.endDate}"></dd>
-        </dl>
-        <dl>
-            <dt>From Time (inclusive):</dt>
-            <dd><input type="time" name="startTime" value="${param.startTime}"></dd>
-        </dl>
-        <dl>
-            <dt>To Time (exclusive):</dt>
-            <dd><input type="time" name="endTime" value="${param.endTime}"></dd>
-        </dl>
-        <button type="submit">Filter</button>
-    </form>--%>
     <hr/>
+
+    <form method="get" action="meals">
+        <input type="hidden" name="action" value="filter">
+        <c:forEach items="${sections}" var="section">
+            <p><input type="checkbox" name="filter" value="${section}">${section}<Br></p>
+        </c:forEach>
+        <p><input type="submit" value="Показать"></p>
+    </form>
+
     <table border="1" cellpadding="8" cellspacing="0">
         <thead>
         <tr>
@@ -46,20 +37,23 @@
             <th>caloriesPerServing</th>
         </tr>
         </thead>
+        <tbody>
         <c:forEach items="${meals}" var="meal">
             <jsp:useBean id="meal" type="model.Meal"/>
-                <td>${meal.name}</td>
-                <td>${meal.description}</td>
-                <td>${meal.section}</td>
-                <td>${meal.weight}</td>
-                <td>${meal.unitWeight}</td>
-                <td>${meal.proteins}</td>
-                <td>${meal.fats}</td>
-                <td>${meal.carbohydrates}</td>
-                <td>${meal.calories}</td>
-                <td>${meal.caloriesPerServing}</td>
+            <tr>
+            <td>${meal.name}</td>
+            <td>${meal.description}</td>
+            <td>${meal.section}</td>
+            <td>${meal.weight}</td>
+            <td>${meal.unitWeight}</td>
+            <td>${meal.proteins}</td>
+            <td>${meal.fats}</td>
+            <td>${meal.carbohydrates}</td>
+            <td>${meal.calories}</td>
+            <td>${meal.caloriesPerServing}</td>
             </tr>
         </c:forEach>
+        </tbody>
     </table>
 </section>
 </body>
