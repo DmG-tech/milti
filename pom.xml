@@ -59,22 +59,22 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
+                <groupId>com.jcabi</groupId>
+                <artifactId>jcabi-heroku-maven-plugin</artifactId>
+                <version>0.4.1</version>
+                <configuration>
+                    <name>milti</name>
+                    <artifacts>
+                        <artifact>milti:jar::${project.version}</artifact>
+                    </artifacts>
+                    <!--suppress UnresolvedMavenProperty -->
+                    <procfile>web: java -Xmx256m -jar ./milti.jar \${PORT}</procfile>
+                </configuration>
                 <executions>
                     <execution>
-                        <phase>package</phase>
-                        <goals><goal>copy</goal></goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>com.heroku</groupId>
-                                    <artifactId>webapp-runner</artifactId>
-                                    <version>9.0.30.0</version>
-                                    <destFileName>webapp-runner.jar</destFileName>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
