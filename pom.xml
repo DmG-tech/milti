@@ -6,7 +6,7 @@
 
     <groupId>dmg</groupId>
     <artifactId>Milti</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>1.0</version>
 
     <properties>
@@ -62,6 +62,15 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
+            </plugin>
+
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <appName>milti</appName>
+                </configuration>
             </plugin>
         </plugins>
     </build>
