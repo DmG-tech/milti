@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/form.css">
 
-    <script type="text/javascript" src="js/jquery-latest.js">
+    <script src='js/tablesort.js'></script>
+    <script src='js/tablesort.number.js'></script>
+
+    <%--<script type="text/javascript" src="js/jquery-latest.js">
     </script>
     <script type="text/javascript" src="js/jquery.tablesorter.js">
-    </script>
+    </script>--%>
 </head>
 <body>
 <div class="box-title">
@@ -31,14 +34,14 @@
 <table id="meal-table" class="tablesorter">
     <thead>
     <tr>
-        <th>Нзвание</th>
-        <th>Раздел меню</th>
-        <th>Вес г(мл)</th>
-        <th>Белки</th>
-        <th>Жиры</th>
-        <th>Углеводы</th>
-        <th>Калорий на 100г</th>
-        <th>Калорий в порции</th>
+        <th role="columnheader">Нзвание</th>
+        <th role="columnheader">Раздел меню</th>
+        <th role="columnheader">Вес г(мл)</th>
+        <th role="columnheader">Белки</th>
+        <th role="columnheader">Жиры</th>
+        <th role="columnheader">Углеводы</th>
+        <th role="columnheader">Калорий на 100г</th>
+        <th role="columnheader">Калорий в порции</th>
     </tr>
     </thead>
     <tbody>
@@ -58,10 +61,15 @@
     </tbody>
 </table>
 </div>
-<script>
+
+<%--<script>
     $(document).ready(function(){
         $("#meal-table").tablesorter();
     });
+</script>--%>
+
+<script>
+    new Tablesort(document.getElementById('meal-table'));
 </script>
 </body>
 </html>
