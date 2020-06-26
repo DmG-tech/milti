@@ -1,0 +1,19 @@
+form {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+input[type=checkbox] {
+    align-content: center;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 20%;
+    margin-right: 40%;
+    margin-left: 40%;
+}

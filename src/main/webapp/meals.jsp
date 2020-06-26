@@ -6,6 +6,8 @@
     <title>Meals</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/form.css">
 
     <script type="text/javascript" src="js/jquery-latest.js">
     </script>
@@ -13,14 +15,19 @@
     </script>
 </head>
 <body>
+<div class="box-title">
 <h1>Меню <a href="https://www.mealty.ru">www.mealty.ru</a></h1>
+</div>
+<div class="box-form">
 <form method="get" action="meals">
     <input type="hidden" name="action" value="filter">
     <c:forEach items="${sections}" var="section">
-        <p><input type="checkbox" class="custom-checkbox" name="filter" value="${section}">${section}</p>
+        <b><input type="checkbox" class="custom-checkbox" name="filter" value="${section}">${section}</b>
     </c:forEach>
-    <p><input type="submit" value="Показать"></p>
+    <p><input type="submit" class="custom-button" value="Показать"></p>
 </form>
+</div>
+<div class="box-table">
 <table id="meal-table" class="tablesorter">
     <thead>
     <tr>
@@ -50,6 +57,7 @@
     </c:forEach>
     </tbody>
 </table>
+</div>
 <script>
     $(document).ready(function(){
         $("#meal-table").tablesorter();
