@@ -15,8 +15,6 @@ public class Meal {
     private Double carbohydrates;
     private Double calories;
 
-    private Double caloriesPerServing;
-
     public Meal(Integer id, String name, String description, String section, Double weight, String unitWeight, Double proteins, Double fats, Double carbohydrates, Double calories) {
         this.id = id;
         this.name = name;
@@ -28,7 +26,6 @@ public class Meal {
         this.fats = fats;
         this.carbohydrates = carbohydrates;
         this.calories = calories;
-        setCaloriesPerServing();
     }
 
     public Meal(String name, String description, String section, Double weight, String unitWeight, Double proteins, Double fats, Double carbohydrates, Double calories) {
@@ -73,7 +70,6 @@ public class Meal {
 
     public void setWeight(Double weight) {
         this.weight = weight;
-        setCaloriesPerServing();
     }
 
     public String getUnitWeight() {
@@ -114,17 +110,6 @@ public class Meal {
 
     public void setCalories(Double calories) {
         this.calories = calories;
-        setCaloriesPerServing();
-    }
-
-    public Double getCaloriesPerServing() {
-        return caloriesPerServing;
-    }
-
-    private void setCaloriesPerServing() {
-        if (weight != null && calories != null) {
-            this.caloriesPerServing = Math.floor(weight / 100 *  calories);
-        } else this.caloriesPerServing = null;
     }
 
     public boolean isNew () {
@@ -141,7 +126,6 @@ public class Meal {
                 carbohydrates + "_" +
                 fats + "_" +
                 proteins + "_" +
-                calories + "_" +
-                caloriesPerServing;
+                calories;
     }
 }

@@ -44,26 +44,24 @@
     <tr>
         <th role="columnheader">Нзвание</th>
         <th role="columnheader">Раздел меню</th>
-        <th role="columnheader">Вес г(мл)</th>
-        <th role="columnheader">Белки</th>
-        <th role="columnheader">Жиры</th>
-        <th role="columnheader">Углеводы</th>
-        <th role="columnheader">Калорий на 100г</th>
-        <th role="columnheader">Калорий в порции</th>
+        <th role="columnheader">Вес<br/>г(мл)</th>
+        <th role="columnheader">Белки<br/>(на порцию)</th>
+        <th role="columnheader">Жиры<br/>(на порцию)</th>
+        <th role="columnheader">Углеводы<br/>(на порцию)</th>
+        <th role="columnheader">Калорий<br/>(на порцию)</th>
     </tr>
     </thead>
     <tbody>
     <c:forEach items="${meals}" var="meal">
-        <jsp:useBean id="meal" type="model.Meal"/>
+        <jsp:useBean id="meal" type="to.MealTo"/>
         <tr role="row">
             <td>${meal.name}<br/>${meal.description}</td>
             <td>${meal.section}</td>
             <td>${meal.weight}</td>
-            <td>${meal.proteins}</td>
-            <td>${meal.fats}</td>
-            <td>${meal.carbohydrates}</td>
-            <td>${meal.calories}</td>
-            <td>${meal.caloriesPerServing}</td>
+            <td>${meal.proteins}<br/>(${meal.proteinsPerServing})</td>
+            <td>${meal.fats}<br/>(${meal.fatsPerServing})</td>
+            <td>${meal.carbohydrates}<br/>(${meal.carbohydratesPerServing})</td>
+            <td>${meal.calories}<br/>(${meal.caloriesPerServing})</td>
         </tr>
     </c:forEach>
     </tbody>

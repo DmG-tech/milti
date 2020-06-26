@@ -2,11 +2,11 @@ package controller;
 
 import Repository.MealRepository;
 import model.Meal;
+import to.MealTo;
 import utils.MealUtils;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 
 public class MealController {
@@ -21,8 +21,8 @@ public class MealController {
     public void delete (int id);
     public Meal get(int id);*/
 
-    public Collection<Meal> getAll() {
-        return repository.getAll();
+    public Collection<MealTo> getAll() {
+        return MealUtils.getTos(repository.getAll());
     }
 
     public Collection<String> getAllSection() {
@@ -31,7 +31,7 @@ public class MealController {
         return sections;
     }
 
-    public Collection<Meal> getMealWithFilter(String ...filter) {
-        return filter == null ? getAll() : MealUtils.getMealBySection(filter);
+    public Collection<MealTo> getMealWithFilter(String ...filter) {
+        return filter == null ? getAll() : MealUtils.getTos(MealUtils.getMealBySection(filter));
     }
 }
