@@ -31,3 +31,4 @@ tr:nth-child(even) {
 th {
     background: #ff9935; /*Заливка заголовков столбцов*/
 }
+/*Для tablesort.js*/
