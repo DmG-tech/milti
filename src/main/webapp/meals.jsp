@@ -5,7 +5,7 @@
 <head>
     <title>Meals</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <script type="text/javascript" src="js/jquery-latest.js">
     </script>
