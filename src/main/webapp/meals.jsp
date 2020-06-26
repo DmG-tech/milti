@@ -44,11 +44,12 @@
     <tr>
         <th role="columnheader">Нзвание</th>
         <th role="columnheader">Раздел меню</th>
-        <th role="columnheader">Вес<br/>г(мл)</th>
-        <th role="columnheader">Белки<br/>(на порцию)</th>
-        <th role="columnheader">Жиры<br/>(на порцию)</th>
-        <th role="columnheader">Углеводы<br/>(на порцию)</th>
-        <th role="columnheader">Калорий<br/>(на порцию)</th>
+        <th role="columnheader">Вес<br/><small>г(мл)</small></th>
+        <th role="columnheader">Белки<br/><small>(на порцию)</small></th>
+        <th role="columnheader">Жиры<br/><small>(на порцию)</small></th>
+        <th role="columnheader">Углеводы<br/><small>(на порцию)</small></th>
+        <th role="columnheader">Калорий<br/>на 100г</th>
+        <th role="columnheader">Калорий на порцию</th>
     </tr>
     </thead>
     <tbody>
@@ -61,7 +62,8 @@
             <td>${meal.proteins}<br/>(${meal.proteinsPerServing})</td>
             <td>${meal.fats}<br/>(${meal.fatsPerServing})</td>
             <td>${meal.carbohydrates}<br/>(${meal.carbohydratesPerServing})</td>
-            <td>${meal.calories}<br/>(${meal.caloriesPerServing})</td>
+            <td>${meal.calories}</td>
+            <td>${meal.caloriesPerServing}</td>
         </tr>
     </c:forEach>
     </tbody>
