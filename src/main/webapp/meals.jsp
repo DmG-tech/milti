@@ -14,9 +14,6 @@
     <script src='js/tablesort.js'></script>
     <script src='js/tablesort.number.js'></script>
 
-    <script src='js/temp.js'></script>
-    <link rel="stylesheet" href="css/temp.css">
-
 </head>
 <body>
 <div>
