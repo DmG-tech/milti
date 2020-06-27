@@ -13,6 +13,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        /*Команда для деплоя в хироку*/
+        //mvn clean heroku:deploy-war
+
         /*MealRepository repository = new InMemoryMealRepository();
         MealParser parser = new MealParser(repository);
         parser.getAllMeal();

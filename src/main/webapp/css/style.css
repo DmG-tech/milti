@@ -1,9 +1,100 @@
-* { font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif, sans-serif;
+* {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif, sans-serif;
     color: #3b3b3b;
 }
 
-.box-title {
-    padding: 10px;
-    width: auto;
+.d-main {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.d-title {
     text-align: center;
+}
+
+.d-nav {
+    display: block;
+    text-align: center;
+}
+
+.d-filter,
+.d-sort {
+    display: inline-block;
+    position: relative;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.meal-card {
+    margin-bottom: 5%;
+}
+
+@media screen and (max-width: 500px) {
+    .meal-tabel {
+        display: none;
+    }
+
+    table {
+        border: 2px solid #d8d8d8;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2%;
+
+    }
+
+    th {
+        width: 30%;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    td {
+        width: 70%;
+        text-align: right;
+    }
+
+    .t-name {
+        text-align: left;
+        padding-bottom: 5%;
+    }
+}
+
+@media screen and (min-width: 501px) {
+    .meal-card{
+        display: none;
+    }
+
+    table {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    th {
+        background: #4CAF50;
+        color: white;
+    }
+    small {
+        color: white;
+    }
+
+    tr {
+        border-bottom: 1px solid #d8d8d8;
+    }
+
+    td:first-child {
+        text-align: left;
+        width: 25%;
+    }
 }
