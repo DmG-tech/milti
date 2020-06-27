@@ -22,15 +22,17 @@ public class MealServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action");
 
-        switch (action == null ? "all" : action) {
-            case "filter":
-                req.setAttribute("meals", controller.getMealWithFilter(req.getParameterValues("filter")));
-                break;
+        String sort = req.getParameter("sort");
+
+        String filter = req.getParameter("filter");
+
+        switch (filter == null ? "all" : filter) {
             case "all":
+                req.setAttribute("meals", controller.getAll(sort));
+                break;
             default:
-                req.setAttribute("meals", controller.getAll());
+                req.setAttribute("meals", controller.getMealWithFilter(sort, req.getParameterValues("filter")));
                 break;
         }
         req.setAttribute("sections", controller.getAllSection());

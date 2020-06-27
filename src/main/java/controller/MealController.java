@@ -1,7 +1,6 @@
 package controller;
 
 import Repository.MealRepository;
-import model.Meal;
 import to.MealTo;
 import utils.MealUtils;
 
@@ -21,7 +20,7 @@ public class MealController {
     public void delete (int id);
     public Meal get(int id);*/
 
-    public Collection<MealTo> getAll() {
+    public Collection<MealTo> getAll(String sort) {
         return MealUtils.getTos(repository.getAll());
     }
 
@@ -31,7 +30,7 @@ public class MealController {
         return sections;
     }
 
-    public Collection<MealTo> getMealWithFilter(String ...filter) {
-        return filter == null ? getAll() : MealUtils.getTos(MealUtils.getMealBySection(filter));
+    public Collection<MealTo> getMealWithFilter(String sort, String ...filter) {
+        return filter == null ? getAll(sort) : MealUtils.getMealToBySection(sort, filter);
     }
 }

@@ -1,9 +1,30 @@
-form {
+/*form {
     margin-left: 10%;
     margin-right: 10%;
 }
 input[type=checkbox] {
     align-content: center;
+}
+
+.input {
+    margin-right: auto;
+    margin-left: auto;
+}*/
+
+.form {
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+.box-form {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+form {
+    width: 100%;
 }
 
 input[type=submit] {
@@ -13,7 +34,28 @@ input[type=submit] {
     padding: 12px 24px;
     text-decoration: none;
     cursor: pointer;
-    width: 20%;
-    margin-right: 40%;
-    margin-left: 40%;
+
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+div.filter{
+    display: inline-block;
+    width: 40%;
+    left: 10%;
+    position: relative;
+    text-align: center;
+}
+
+div.sort {
+    display: inline-block;
+    width: 40%;
+    left: 10%;
+    position: relative;
+    text-align: center;
+}
+
+select{
+    width: 100%;
 }

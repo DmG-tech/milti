@@ -1,34 +1,69 @@
-table {
-    text-align: center; /*Выравнивание текста во всей таблице*/
-    border-collapse: collapse; /* Убираем линии между ячейками */
-    width: 100%; /*Ширина таблицы*/
+@media screen and (min-width: 801px) {
+    .box-table {
+        width: auto;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    table {
+        text-align: center; /*Выравнивание текста во всей таблице*/
+        border-collapse: collapse; /* Убираем линии между ячейками */
+        width: 100%; /*Ширина таблицы*/
+    }
+
+    th,
+    td {
+        padding: 10px; /*Отступ внутри ячейки*/
+    }
+
+
+    td:first-child {
+        text-align: left; /*Выравнивание текст первого столбца таблицы*/
+        width: 25%; /*Ограничиваем ширину первого столбца*/
+    }
+
+    td {
+        width: 10%; /*Ограничиваем ширину столбцов*/
+    }
+
+
+    tr:nth-child(odd) {
+        background: white; /*Заливка нечетных строк*/
+    }
+
+    tr:nth-child(even) {
+        background: #e0e0e0; /*Заливка четных строк*/
+    }
+
+    th {
+        background: #ff9935; /*Заливка заголовков столбцов*/
+    }
 }
 
+@media screen and (max-width: 800px) {
+    table.tablesorter thead {
+        display: none;
+    }
 
-th,
-td {
-    padding: 10px; /*Отступ внутри ячейки*/
+    table.tablesorter tr {
+        display: block;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #e8e9eb;
+    }
+
+    table.tablesorter td {
+        display: block;
+        text-align: right;
+    }
+
+    table.tablesorter td:before {
+        content: attr(aria-label);
+        float: left;
+        font-weight: bold;
+        margin-right: 1rem; /*Сам добавил отступ для текста*/
+    }
+
+    table.tablesorter {width: 100%; border: 0px; border-collapse: collapse;}
+    table.tablesorter thead {font-weight: bold;}
+    table.tablesorter td {padding: 0.6rem 1rem; border-bottom: 1px solid #e8e9eb;}
 }
-
-
-td:first-child {
-    text-align: left; /*Выравнивание текст первого столбца таблицы*/
-    width: 25%; /*Ограничиваем ширину первого столбца*/
-}
-
-td {
-    width: 10%; /*Ограничиваем ширину столбцов*/
-}
-
-
-tr:nth-child(odd) {
-    background: white; /*Заливка нечетных строк*/
-}
-tr:nth-child(even) {
-    background: #e0e0e0; /*Заливка четных строк*/
-}
-
-th {
-    background: #ff9935; /*Заливка заголовков столбцов*/
-}
-/*Для tablesort.js*/
