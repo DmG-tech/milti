@@ -1,6 +1,6 @@
 package controller;
 
-import Repository.MealRepository;
+import repository.MealRepository;
 import to.MealTo;
 import utils.MealUtils;
 
