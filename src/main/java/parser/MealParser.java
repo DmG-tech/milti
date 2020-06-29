@@ -13,9 +13,6 @@ import static utils.NumberUtils.*;
 
 public class MealParser {
 
-    public MealParser() {
-    }
-
     public List<Meal> getAllMeal() {
         Document startPage = null;
         try {

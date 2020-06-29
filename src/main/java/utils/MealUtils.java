@@ -1,7 +1,7 @@
 package utils;
 
-import Repository.InMemoryMealRepository;
-import Repository.MealRepository;
+import repository.InMemoryMealRepository;
+import repository.MealRepository;
 import model.Meal;
 import to.MealTo;
 
@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class MealUtils {
