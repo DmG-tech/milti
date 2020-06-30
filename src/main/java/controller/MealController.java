@@ -21,7 +21,7 @@ public class MealController {
     public Meal get(int id);*/
 
     public Collection<MealTo> getAll(String sort) {
-        return MealUtils.getTos(repository.getAll());
+        return MealUtils.sort(sort,MealUtils.getTos(repository.getAll()));
     }
 
     public Collection<String> getAllSection() {

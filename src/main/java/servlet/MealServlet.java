@@ -26,13 +26,18 @@ public class MealServlet extends HttpServlet {
 
         String filter = req.getParameter("filter");
 
-        switch (filter == null ? "all" : filter) {
-            case "all":
-                req.setAttribute("meals", controller.getAll(sort));
-                break;
-            default:
-                req.setAttribute("meals", controller.getMealWithFilter(sort, req.getParameterValues("filter")));
-                break;
+        if (sort == null) {
+            sort = "default";
+        }
+
+        if (filter == null) {
+            filter = "all";
+        }
+
+        if ("all".equals(filter)) {
+            req.setAttribute("meals", controller.getAll(sort));
+        } else {
+            req.setAttribute("meals", controller.getMealWithFilter(sort, req.getParameterValues("filter")));
         }
         req.setAttribute("sections", controller.getAllSection());
         req.getRequestDispatcher("/meals.jsp").forward(req, resp);

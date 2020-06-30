@@ -17,23 +17,31 @@ public class MealUtils {
 
     public static Collection<MealTo> getMealToBySection(String sort, String... filter) {
         List<String> sections = List.of(filter);
-        if (sort == null || "default".equals(sort)) {
-            return getTos(repository.getAll().stream().filter(meal -> sections.contains(meal.getSection())).collect(Collectors.toList()));
+        if ("default".equals(sort)) {
+            return getTos(repository.getAll().stream()
+                    .filter(meal -> sections.contains(meal.getSection()))
+                    .collect(Collectors.toList()));
         } else {
-            return sort(sort, getTos(repository.getAll().stream().filter(meal -> sections.contains(meal.getSection())).collect(Collectors.toList())));
+            return sort(sort, getTos(repository.getAll().stream()
+                    .filter(meal -> sections.contains(meal.getSection()))
+                    .collect(Collectors.toList())));
         }
     }
 
-    private static Collection<MealTo> sort(String sort, Collection<MealTo> mealTos) {
+    public static Collection<MealTo> sort(String sort, Collection<MealTo> mealTos) {
         switch (sort) {
             case "proteins":
-                return mealTos.stream().sorted(Comparator.comparing(MealTo::getProteins).reversed()).collect(Collectors.toList());
+                return mealTos.stream().sorted(Comparator.comparing(MealTo::getProteins).reversed())
+                        .collect(Collectors.toList());
             case "fats":
-                return mealTos.stream().sorted(Comparator.comparing(MealTo::getFats)).collect(Collectors.toList());
+                return mealTos.stream().sorted(Comparator.comparing(MealTo::getFats))
+                        .collect(Collectors.toList());
             case "carbohydrates":
-                return mealTos.stream().sorted(Comparator.comparing(MealTo::getCarbohydrates).reversed()).collect(Collectors.toList());
+                return mealTos.stream().sorted(Comparator.comparing(MealTo::getCarbohydrates).reversed())
+                        .collect(Collectors.toList());
             case "caloriesPerServing":
-                return mealTos.stream().sorted(Comparator.comparing(MealTo::getCaloriesPerServing).reversed()).collect(Collectors.toList());
+                return mealTos.stream().sorted(Comparator.comparing(MealTo::getCaloriesPerServing).reversed())
+                        .collect(Collectors.toList());
             default: return mealTos;
         }
     }
